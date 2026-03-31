@@ -18,7 +18,7 @@ type LoginFormInputs = z.infer<typeof loginSchema>
 
 export function Login() {
   const [showPassword, setShowPassword] = useState(false)
-  const { signIn } = useContext(AuthContext) // Trazemos a função do nosso Cofre
+  const { signIn } = useContext(AuthContext) // Função do nosso Cofre
   const navigate = useNavigate() // Para redirecionar de tela
 
   // 2. Iniciamos o React Hook Form
@@ -82,7 +82,7 @@ export function Login() {
             <BarChart3 className="w-6 h-6 text-[#6C63FF]" />
           </div>
           <span className="font-heading text-2xl font-bold tracking-tight text-white drop-shadow-[0_0_15px_rgba(108,99,255,0.5)]">
-            Aurum Finance
+            Aurum Personal Finance
           </span>
         </div>
         <div className="hidden sm:flex items-center gap-6">
@@ -94,17 +94,17 @@ export function Login() {
         </div>
       </header>
 
-      {/* 🟣 LADO ESQUERDO - Formulário "Glass Card" */}
+      {/* LADO ESQUERDO - Formulário */}
       <div className="w-full lg:w-1/2 flex flex-col items-center justify-center px-6 relative z-10 mt-16 lg:mt-0">
         
         <div className="w-full max-w-[440px] bg-white/[0.02] border border-white/10 p-10 sm:p-12 rounded-[2rem] shadow-2xl backdrop-blur-xl">
           
           <div className="mb-10">
-            <h2 className="font-heading text-[28px] font-bold tracking-tight mb-2 text-white">Acesse sua Carteira</h2>
-            <p className="text-[#A1A1AA] text-sm">Insira suas credenciais corporativas.</p>
+            <h2 className="font-heading text-[28px] font-bold tracking-tight mb-2 text-white">Acesse sua conta</h2>
+            <p className="text-[#A1A1AA] text-sm">Insira suas credenciais.</p>
           </div>
 
-          {/* O form agora intercepta o envio com o handleSubmit */}
+          {/* O form intercepta o envio com o handleSubmit */}
           <form onSubmit={handleSubmit(handleLogin)} className="space-y-6">
             
             {/* Input E-mail */}
@@ -117,7 +117,7 @@ export function Login() {
                 <input
                   type="email"
                   placeholder="seu@email.com"
-                  {...register('email')} // <-- Conectando o input ao React Hook Form
+                  {...register('email')} 
                   className={`w-full pl-11 pr-4 py-3.5 bg-[#050508] border ${errors.email ? 'border-red-500' : 'border-white/5'} rounded-xl text-white placeholder-[#A1A1AA]/40 focus:outline-none focus:border-[#6C63FF] focus:ring-1 focus:ring-[#6C63FF]/50 transition-all shadow-inner`}
                 />
               </div>
@@ -140,7 +140,7 @@ export function Login() {
                 <input
                   type={showPassword ? "text" : "password"}
                   placeholder="••••••••"
-                  {...register('password')} // <-- Conectando o input ao React Hook Form
+                  {...register('password')}
                   className={`w-full pl-11 pr-12 py-3.5 bg-[#050508] border ${errors.password ? 'border-red-500' : 'border-white/5'} rounded-xl text-white placeholder-[#A1A1AA]/40 focus:outline-none focus:border-[#6C63FF] focus:ring-1 focus:ring-[#6C63FF]/50 transition-all shadow-inner`}
                 />
                 <button
@@ -184,7 +184,7 @@ export function Login() {
         </div>
       </div>
 
-      {/* 🟣 LADO DIREITO - O GLOW NEON E A PLACA DE VIDRO */}
+      {/* LADO DIREITO */}
       <div className="hidden lg:flex w-1/2 relative items-center justify-center bg-[#050508] border-l border-white/5 overflow-hidden">
         
         {/* Background da Cidade (Com overlay escuro) */}
@@ -195,7 +195,7 @@ export function Login() {
         <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-[#6C63FF]/30 rounded-full blur-[120px] animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-[#22C55E]/10 rounded-full blur-[100px]" />
 
-        {/* 🏆 A PLACA DE VIDRO (Simulação 3D com bordas asimétricas) */}
+        {/* A PLACA DE VIDRO */}
         <div className="relative z-10 w-full max-w-[500px] backdrop-blur-2xl bg-white/[0.03] border-t border-l border-white/30 border-b border-r border-white/5 p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform rotate-[-2deg] hover:rotate-0 transition-transform duration-700">
           
           {/* Brilho interno do vidro */}
